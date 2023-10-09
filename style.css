@@ -1,0 +1,261 @@
+body {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+#content-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+#logo-container {
+    width: 40%;
+    height: 100%;
+    background-color: #fff;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+#logo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 40%;
+    margin: auto;
+    overflow: hidden;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    text-align: left;
+}
+
+input, select {
+    width: calc(100% - 16px);
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+pre {
+    white-space: pre-wrap;
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: left;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.separator-line {
+    margin: 20px 0;
+    border-top: 2px solid #4caf50;
+}
+
+.checkbox-columns {
+    display: flex;
+    justify-content: space-between;
+}
+
+.checkbox-container {
+    flex: 1;
+    text-align: left;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.checkbox-container label {
+    margin-bottom: 10px;
+}
+
+.checkbox-title {
+    font-size: 25px;
+    font-weight: bold;
+    color: #4caf50;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 24px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #4caf50;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #4caf50;
+}
+
+input:checked + .slider:before {
+    transform: translateX(16px);
+}
+
+#relatorio-container {
+    text-align: center;
+    max-width: 800px;
+    width: 20%;
+    margin: auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    margin-top: 20px;
+}
+
+/* Cor de fundo mostarda para os artigos 12 ao 35 */
+#crime_numero option[value="12"],
+#crime_numero option[value="13"],
+#crime_numero option[value="14"],
+#crime_numero option[value="15"],
+#crime_numero option[value="16"],
+#crime_numero option[value="17"],
+#crime_numero option[value="18"],
+#crime_numero option[value="19"],
+#crime_numero option[value="20"],
+#crime_numero option[value="21"],
+#crime_numero option[value="22"],
+#crime_numero option[value="23"],
+#crime_numero option[value="24"],
+#crime_numero option[value="25"],
+#crime_numero option[value="26"],
+#crime_numero option[value="27"],
+#crime_numero option[value="28"],
+#crime_numero option[value="29"],
+#crime_numero option[value="30"],
+#crime_numero option[value="31"],
+#crime_numero option[value="32"],
+#crime_numero option[value="33"],
+#crime_numero option[value="34"],
+#crime_numero option[value="35"] {
+    background-color: #DAA520; /* Cor mostarda de fundo */
+    color: #000000; /* Texto em preto */
+}
+
+/* Cor de fundo roxo para os artigos 36 ao 69 */
+#crime_numero option[value="36"],
+#crime_numero option[value="37"],
+#crime_numero option[value="38"],
+#crime_numero option[value="39"],
+#crime_numero option[value="40"],
+#crime_numero option[value="41"],
+#crime_numero option[value="42"],
+#crime_numero option[value="43"],
+#crime_numero option[value="44"],
+#crime_numero option[value="45"],
+#crime_numero option[value="46"],
+#crime_numero option[value="47"],
+#crime_numero option[value="48"],
+#crime_numero option[value="49"],
+#crime_numero option[value="50"],
+#crime_numero option[value="51"],
+#crime_numero option[value="52"],
+#crime_numero option[value="53"],
+#crime_numero option[value="54"],
+#crime_numero option[value="55"],
+#crime_numero option[value="56"],
+#crime_numero option[value="57"],
+#crime_numero option[value="58"],
+#crime_numero option[value="59"],
+#crime_numero option[value="60"],
+#crime_numero option[value="61"],
+#crime_numero option[value="62"],
+#crime_numero option[value="63"],
+#crime_numero option[value="64"],
+#crime_numero option[value="65"],
+#crime_numero option[value="66"],
+#crime_numero option[value="67"],
+#crime_numero option[value="68"],
+#crime_numero option[value="69"] {
+    background-color: #800080; /* Cor roxa de fundo */
+    color: #000000; /* Texto em preto */
+}
+
+/* Cor de fundo vermelho para os artigos 70 ao 76 */
+#crime_numero option[value="70"],
+#crime_numero option[value="71"],
+#crime_numero option[value="72"],
+#crime_numero option[value="73"],
+#crime_numero option[value="74"],
+#crime_numero option[value="75"],
+#crime_numero option[value="76"] {
+    background-color: #FF0000; /* Cor vermelha de fundo */
+    color: #000000; /* Texto em preto */
+}
+
+
+
+
+
+

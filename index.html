@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Penal</title>
+    <!-- Adicionando Favicon -->
+    <link rel="icon" type="image/png" href="caminho/para/seu/favicon.png">
+
+    <!-- Adicionando o link para o arquivo CSS -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div id="content-wrapper">
+        <div id="logo-container">
+            <img src="https://processus.edu.br/concursos/wp-content/uploads/2020/09/pf-2.jpg" alt="Logotipo">
+        </div>
+
+        <h1>Calculadora Penal</h1>
+        <form id="calculoForm">
+            <label for="numero_oficial">Passaporte do oficial:</label>
+            <input type="text" id="numero_oficial" required>
+
+            <label for="nome_oficial">Nome do oficial:</label>
+            <input type="text" id="nome_oficial" required>
+
+            <label for="numero_passaporte">Passaporte do meliante:</label>
+            <input type="text" id="numero_passaporte" required>
+
+            <label for="crime_numero">Selecione o número do Art.:</label>
+            <select id="crime_numero" required>
+                <!-- Opções de crimes - remova ou adicione conforme necessário -->
+                <option value="12">Art.12 - USAR EQUIPAMENTO BALISTICO</option>
+                <option value="13">Art.13 - USAR EQUIPAMENTO POLICIAL</option>
+                <option value="14">Art.14 - USAR MASCARA DE OCULTAÇÃO DO ROSTO</option>
+                <option value="15">Art.15 - RESISTÊNCIA A PRISÃO (FUGIR)</option>
+                <option value="16">Art.16 - OMISSÃO DE SOCORRO</option>
+                <option value="17">Art.17 - DANO AO PATRIMONIO PÚBLICO</option>
+                <option value="18">Art.18 - INVASÃO</option>
+                <option value="19">Art.19 - DIFAMAÇÃO, INJURIA E CALUNIA</option>
+                <option value="20">Art.20 - FURTO</option>
+                <option value="21">Art.21 - PORTE DE BALAS EXCEDIDO</option>
+                <option value="22">Art.22 - FUGA DA ABORDAGEM POLICIAL</option>
+                <option value="23">Art.23 - TENTATIVA DE SUBORNO</option>
+                <option value="24">Art.24 - RECEPTAÇÃO</option>
+                <option value="25">Art.25 - TENTATIVA DE ROUBO</option>
+                <option value="26">Art.26 - FALSO TESTEMUNHO (PERJÚRIO)</option>
+                <option value="27">Art.27 - OBSTRUÇÃO DE JUSTIÇA</option>
+                <option value="28">Art.28 - DESOBEDIÊNCIA A ORDEM POLICAL</option>
+                <option value="29">Art.29 - APROPRIAÇÃO INDÉBITA</option>
+                <option value="30">Art.30 - INVASÃO DE PRIVACIDADE</option>
+                <option value="31">Art.31</option>
+                <option value="32">Art.32 - MULTAS PENDENTES</option>
+                <option value="33">Art.33 - DESORDEM E PERTURBAÇÃO DA PAZ</option>
+                <option value="34">Art.34 - PLACA CLONADA</option>
+                <option value="35">Art.35 - CORRIDA ILEGAL</option>
+                <option value="36">Art.36 - ASSALTO À CAIXA ELETRÔNICA</option>
+                <option value="37">Art.37 - ASSALTO À CAIXA REGISTRADORA</option>
+                <option value="38">Art.38 - ASSALTO A BANCO OU JOALHERIA</option>
+                <option value="39">Art.39 - ASSALTO À LOJA</option>
+                <option value="40">Art.40 - ASSALTO A CARRO FORTE</option>
+                <option value="41">Art.41 - PORTAR ALGEMA</option>
+                <option value="42">Art.42 - PORTAR LOCKPICK</option>
+                <option value="43">Art.43 - PORTAR MASTERPICK</option>
+                <option value="44">Art.44 - PORTAR PENDRIVE</option>
+                <option value="45">Art.45 - PORTAR KEYCARD</option>
+                <option value="46">Art.46 - PORTAR CAPUZ</option>
+                <option value="47">Art.47 - PORTE ILEGAL DE ARMA LEVE</option>
+                <option value="48">Art.48 - ESTELIONATO</option>
+                <option value="49">Art.49 - PORTE ILEGAL DE ARMA PESADA</option>
+                <option value="50">Art.50 - TRÁFICO DE DROGAS (A PARTIR DE 6 UNIDADES)</option>
+                <option value="51">Art.51 - CONSUMO PRÓPRIO DE DROGAS (5 UNIDADES)</option>
+                <option value="52">Art.52 - PORTAR DINHEIRO SUJO</option>
+                <option value="53">Art.53 - TRÁFICO DE ORGÃOS</option>
+                <option value="54">Art.54 - TRÁFICO DE MUNIÇÃO</option>
+                <option value="55">Art.55 - TRÁFICO DE ARMAS</option>
+                <option value="56">Art.56 - ABUSO DE AUTORIDADE</option>
+                <option value="57">Art.57 - DESACATO À AUTORIDADE</option>
+                <option value="58">Art.58 - EXTORÇÃO</option>
+                <option value="59">Art.59 - FALSIDADE IDEOLOGICA</option>
+                <option value="60">Art.60 - DENUNCIAÇÃO CALUNIOSA</option>
+                <option value="61">Art.61 - CORRUPÇÃO ATIVA E PASSIVA</option>
+                <option value="62">Art.62 - AMEAÇA</option>
+                <option value="63">Art.63 - ATO OBSCENO EM PÚBLICO</option>
+                <option value="64">Art.64 - PORTE ILEGAL DE ARMA BRANCA</option>
+                <option value="65">Art.65 - FURTO/ROUBO DE VEÍCULOS</option>
+                <option value="66">Art.66 - LESÃO CORPORAL</option>
+                <option value="67">Art.67 - SEQUESTRO</option>
+                <option value="68">Art.68 - DESTRUIÇÃO DE EVIDÊNCIA FÍSICA</option>
+                <option value="69">Art.69 - FORMAÇÃO DE QUADRILHA</option>
+                <option value="70">Art.70 - TENTATIVA DE HOMICÍDIO</option>
+                <option value="71">Art.71 - HOMICÍDIO CULPOSO (SEM INTENÇÃO DE MATAR)</option>
+                <option value="72">Art.72 - LATROCINIO (ROUBO SEGUIDO DE MORTE)</option>
+                <option value="73">Art.73 - TENTATIVA DE HOMICÍDIO A UM SERVIDOR PUBLICO</option>
+                <option value="74">Art.74 - HOMICÍDIO DOLOSO (COM INTENÇÃO DE MATAR)</option>
+                <option value="75">Art.75 - FEMINICÍDIO</option>
+                <option value="76">Art.76 - HOMICÍDIO A UM SERVIDOR PUBLICO</option>
+                <!-- Adicione mais opções conforme necessário -->
+            </select>
+            <button type="button" onclick="adicionarCrime()">Adicionar Crime</button>
+
+            <button type="button" onclick="limparArtigos()">Limpar Artigos</button>
+
+            <div class="separator-line"></div>
+
+            <div class="checkbox-columns">
+                <div class="checkbox-container">
+                    <label class="checkbox-title">Atenuantes</label>
+
+                    <label for="confessarCrime">Confessar Crime:</label>
+                    <label class="switch">
+                        <input type="checkbox" id="confessarCrime">
+                        <span class="slider"></span>
+                    </label>
+
+                    <label for="reuPrimario">Réu Primário:</label>
+                    <label class="switch">
+                        <input type="checkbox" id="reuPrimario">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="checkbox-container">
+                    <label class="checkbox-title">Agravantes</label>
+
+                <label for="reuReincidenteMesmoCrime">Réu Reincidente Pelo Mesmo Crime:</label>
+                <label class="switch">
+                    <input type="checkbox" id="reuReincidenteMesmoCrime">
+                    <span class="slider"></span>
+                </label>
+
+                <label for="reuReincidenteCrimeDiferente">Réu Reincidente Por Crime Diferente:</label>
+                <label class="switch">
+                    <input type="checkbox" id="reuReincidenteCrimeDiferente">
+                    <span class="slider"></span>
+                </label>
+
+                <label for="usarVeiculoPublico">Utilizar Veículo Público Para Crime:</label>
+                <label class="switch">
+                    <input type="checkbox" id="usarVeiculoPublico">
+                    <span class="slider"></span>
+                </label>
+
+                <label for="desacato">Desacato:</label>
+                <label class="switch">
+                    <input type="checkbox" id="desacato">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+
+        <button type="button" onclick="gerarRelatorio()">Gerar Relatório</button>
+    </form>
+</div>
+
+<div id="relatorio-container-wrapper">
+    <div id="relatorio-container">
+            <!-- Adicione este código onde deseja que o total de meses seja exibido -->
+            <span id="totalMesesVisor">Total de Meses: 0</span>
+            <h2>Relatório Penal</h2>
+            <pre id="relatorio"></pre>
+            <button id="btn-copiar" onclick="copiarRelatorio()">Copiar Relatório</button>
+        </div>
+    </div>
+
+    </form>
+
+    <script>
+        let crimes = [];
+
+        function adicionarCrime() {
+            let crimeNumero = document.getElementById('crime_numero').value;
+            crimes.push("Art." + crimeNumero);
+            document.getElementById('crime_numero').value = '';
+        }
+
+        function limparArtigos() {
+            crimes = [];
+        }
+
+        function capitalizeFirstLetter(str) {
+            return str.replace(/\b\w/g, function(l) {
+                return l.toUpperCase();
+            });
+        }
+
+        function calcularMesesPrisao() {
+            const mesesPorCrime = {
+                'Art.12': 5,
+                'Art.13': 5,
+                'Art.14': 5,
+                'Art.15': 5,
+                'Art.16': 10,
+                'Art.17': 10,
+                'Art.18': 10,
+                'Art.19': 0,
+                'Art.20': 15,
+                'Art.21': 0,
+                'Art.22': 20,
+                'Art.23': 15,
+                'Art.24': 15,
+                'Art.25': 10,
+                'Art.26': 10,
+                'Art.27': 10,
+                'Art.28': 15,
+                'Art.29': 10,
+                'Art.30': 10,
+                'Art.31': 15,
+                'Art.32': 5,
+                'Art.33': 5,
+                'Art.34': 10,
+                'Art.35': 15,
+                'Art.36': 15,
+                'Art.37': 20,
+                'Art.38': 25,
+                'Art.39': 25,
+                'Art.40': 30,
+                'Art.41': 10,
+                'Art.42': 10,
+                'Art.43': 10,
+                'Art.44': 10,
+                'Art.45': 10,
+                'Art.46': 10,
+                'Art.47': 20,
+                'Art.48': 15,
+                'Art.49': 30,
+                'Art.50': 15,
+                'Art.51': 0,
+                'Art.52': 15,
+                'Art.53': 35,
+                'Art.54': 20,
+                'Art.55': 20,
+                'Art.56': 0,
+                'Art.57': 35,
+                'Art.58': 25,
+                'Art.59': 20,
+                'Art.60': 10,
+                'Art.61': 35,
+                'Art.62': 25,
+                'Art.63': 10,
+                'Art.64': 15,
+                'Art.65': 30,
+                'Art.66': 15,
+                'Art.67': 20,
+                'Art.68': 10,
+                'Art.69': 15,
+                'Art.70': 40,
+                'Art.71': 50,
+                'Art.72': 60,
+                'Art.73': 60,
+                'Art.74': 60,
+                'Art.75': 60,
+                'Art.76': 60,
+                // Adicione mais crimes conforme necessário
+            };
+
+            const confessouCrime = document.getElementById('confessarCrime').checked;
+            const reuPrimario = document.getElementById('reuPrimario').checked;
+            const reincidenteMesmoCrime = document.getElementById('reuReincidenteMesmoCrime').checked;
+            const reincidenteCrimeDiferente = document.getElementById('reuReincidenteCrimeDiferente').checked;
+            const usarVeiculoPublico = document.getElementById('usarVeiculoPublico').checked;
+            const desacato = document.getElementById('desacato').checked;
+
+            const totalMesesPrisao = crimes.reduce((total, crime) => {
+                if (mesesPorCrime.hasOwnProperty(crime)) {
+                    total += mesesPorCrime[crime];
+                }
+                return total;
+            }, 0);
+
+            let descontoPrimario = 0;
+
+            if (reuPrimario) {
+                descontoPrimario += 0.1; // Acréscimo de 10% para réu primário
+            }
+
+            // Calcular descontos e aumentos
+            const fatorDesconto = 1 - descontoPrimario;
+            const fatorAumento = 1 +
+                (reincidenteMesmoCrime ? 0.3 : 0) +  // Aumento de 30% para reincidente pelo mesmo crime
+                (reincidenteCrimeDiferente ? 0.2 : 0) +  // Aumento de 20% para reincidente por crime diferente
+                (usarVeiculoPublico ? 0.5 : 0) +  // Aumento de 50% para usar veículo público para crime
+                (desacato ? 0.5 : 0);  // Aumento de 50% para desacato
+                // Adicione outros aumentos/descontos conforme necessário
+
+            const totalComDesconto = Math.max(0, totalMesesPrisao * fatorDesconto * fatorAumento);
+
+            if (confessouCrime) {
+                const descontoConfissao = totalComDesconto * 0.1;
+                return Math.max(0, totalComDesconto - descontoConfissao);
+            }
+
+            return totalComDesconto;
+        }
+
+        function gerarRelatorio() {
+            let numero_oficial = document.getElementById('numero_oficial').value;
+            let nome_oficial = capitalizeFirstLetter(document.getElementById('nome_oficial').value);
+            let numero_passaporte = document.getElementById('numero_passaporte').value;
+            
+            let totalMesesPrisao = calcularMesesPrisao();
+
+            // Arredondar para baixo
+            totalMesesPrisao = Math.floor(totalMesesPrisao);
+
+            document.getElementById('totalMesesVisor').textContent = "Total de Meses: " + Math.floor(totalMesesPrisao);
+
+            let data_hora_atual = new Date();
+            let data_hora_formatada = data_hora_atual.toLocaleString();
+            let totalMesesPrisaoExibicao = Math.min(totalMesesPrisao, 60);
+
+            let relatorio = "[OFICIAL]: " + numero_oficial + " | " + nome_oficial + "\n";
+            relatorio += "[==============PRENDEU==============]\n";
+            relatorio += "[PASSAPORTE]: " + numero_passaporte + "\n";
+            relatorio += "[TEMPO]: " + totalMesesPrisaoExibicao.toFixed(0) + " meses\n";
+            relatorio += "[CRIMES]: " + crimes.join(', ') + "\n";
+            relatorio += "[Data]: " + data_hora_formatada + "\n";
+            relatorio += "Participantes:\n";
+
+            document.getElementById('relatorio').textContent = relatorio;
+        }
+
+
+        function copiarRelatorio() {
+            const relatorioText = document.getElementById('relatorio').textContent;
+
+            // Criar um elemento de texto oculto para copiar o texto
+            const textarea = document.createElement('textarea');
+            textarea.value = relatorioText;
+            document.body.appendChild(textarea);
+
+            // Selecionar e copiar o texto
+            textarea.select();
+            document.execCommand('copy');
+
+            // Remover o elemento de texto
+            document.body.removeChild(textarea);
+
+            alert('Relatório copiado para a área de transferência!');
+        }
+    </script>
+</body>
+</html>
