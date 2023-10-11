@@ -56,9 +56,10 @@ h1, h2 {
 /* Ajuste para Dispositivos Pequenos - Relatório */
 @media screen and (max-width: 768px) {
     #relatorio-container {
-        width: 100%;
+        width: 90%; /* Ajuste para uma largura maior em dispositivos móveis */
         box-sizing: border-box;
         overflow: auto; /* Adicionando scroll horizontal se necessário */
+        margin: auto; /* Centralizando o contêiner na tela */
     }
 
     #logo-container {
