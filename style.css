@@ -1,3 +1,5 @@
+
+
 body {
     text-align: center;
     margin: 0;
@@ -40,6 +42,17 @@ form {
     width: 40%;
     margin: auto;
     overflow: hidden;
+}
+
+/* Adicionando regras de mídia para dispositivos pequenos */
+@media screen and (max-width: 600px) {
+    form {
+        width: 90%; /* Reduzindo a largura do formulário em dispositivos pequenos */
+    }
+
+    #relatorio-container {
+        width: 90%; /* Reduzindo a largura do contêiner do relatório em dispositivos pequenos */
+    }
 }
 
 label {
