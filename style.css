@@ -1,5 +1,3 @@
-
-
 body {
     text-align: center;
     margin: 0;
@@ -319,9 +317,3 @@ input:checked + .slider:before {
     background-color: #FF0000; /* Cor vermelha de fundo */
     color: #000000; /* Texto em preto */
 }
-
-
-
-
-
-
