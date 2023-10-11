@@ -71,7 +71,9 @@ h1, h2 {
         width: 100%;
     }
 
-
+    #relatorio-container {
+        width: 90%;
+    }
 }
 
 /* Ajuste para Dispositivos Pequenos - Relatório */
@@ -84,6 +86,9 @@ h1, h2 {
         width: 100%;
     }
 
+    #relatorio-container {
+        width: 100%;
+    }
 }
 
 
@@ -219,14 +224,17 @@ input:checked + .slider:before {
 }
 
 #relatorio-container {
-    max-width: 100%; /* Adicione esta linha para garantir que o relatório não ultrapasse a largura da tela */
-    width: 100%; /* Adicione esta linha para garantir que o relatório ocupe toda a largura disponível */
-    margin: 20px auto; /* Adicione esta linha para centralizar o relatório e adicionar um espaçamento na parte superior */
+    max-width: 100%;
+    width: calc(100% - 40px); /* Leva em consideração o padding de 20px em ambos os lados */
+    margin: 20px;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background-color: #fff;
+    overflow: auto; /* Adiciona scroll horizontal se necessário */
+    text-align: left; /* Alinha o texto à esquerda para evitar que o texto justificado crie espaçamento irregular */
 }
+
 
 /* Cor de fundo mostarda para os artigos 12 ao 35 */
 #crime_numero option[value="12"],
