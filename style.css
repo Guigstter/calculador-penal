@@ -224,17 +224,16 @@ input:checked + .slider:before {
 }
 
 #relatorio-container {
-    max-width: 100%;
-    width: calc(100% - 40px); /* Leva em consideração o padding de 20px em ambos os lados */
-    margin: 20px;
+    text-align: center;
+    max-width: 800px;
+    width: 20%;
+    margin: auto;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background-color: #fff;
-    overflow: auto; /* Adiciona scroll horizontal se necessário */
-    text-align: left; /* Alinha o texto à esquerda para evitar que o texto justificado crie espaçamento irregular */
+    margin-top: 20px;
 }
-
 
 /* Cor de fundo mostarda para os artigos 12 ao 35 */
 #crime_numero option[value="12"],
@@ -315,3 +314,9 @@ input:checked + .slider:before {
     background-color: #FF0000; /* Cor vermelha de fundo */
     color: #000000; /* Texto em preto */
 }
+
+
+
+
+
+
