@@ -52,17 +52,8 @@ h1, h2 {
     color: #333;
 }
 
-
-/* Ajuste para Dispositivos Pequenos - Relatório */
+/* Ajuste para Dispositivos Pequenos - Geral */
 @media screen and (max-width: 768px) {
-    #relatorio-container {
-        width: 100%; /* Alterando a largura para 100% */
-        box-sizing: border-box;
-        overflow: auto; /* Adicionando scroll horizontal se necessário */
-        margin: 0; /* Removendo a margem */
-        padding: 10px; /* Adicionando algum preenchimento para melhorar a aparência */
-    }
-
     #logo-container {
         width: 80%;
     }
@@ -72,13 +63,8 @@ h1, h2 {
         border-radius: 8px;
     }
 
-    .checkbox-columns {
-        flex-direction: column;
-    }
-
-    .checkbox-container {
-        width: 100%;
-        margin-bottom: 10px;
+    form {
+        width: 80%; /* Reduzindo a largura do formulário */
     }
 
     select, input {
@@ -87,6 +73,21 @@ h1, h2 {
 
     #relatorio-container {
         width: 90%;
+    }
+}
+
+/* Ajuste para Dispositivos Pequenos - Relatório */
+@media screen and (max-width: 480px) {
+    #logo-container {
+        width: 100%;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    #relatorio-container {
+        width: 100%;
     }
 }
 
