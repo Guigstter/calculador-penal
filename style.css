@@ -183,7 +183,7 @@ img {
 /* Ajustes para telas menores */
 @media only screen and (max-width: 600px) {
     #content-wrapper {
-        width: 90%; /* Reduz a largura para melhorar em telas menores */
+        width: 100%; /* Preenche a largura do contêiner pai */
         overflow-x: hidden; /* Impede a rolagem horizontal */
     }
 
@@ -192,7 +192,7 @@ img {
     }
 
     #relatorio-container {
-        width: 90%; /* Reduz a largura para melhorar em telas menores */
+        width: 100%; /* Preenche a largura do contêiner pai */
     }
 
     .checkbox-columns {
@@ -204,7 +204,7 @@ img {
     }
 
     #logo-container img {
-        max-width: 100%; /* Faz o logotipo ocupar 100% da largura do contêiner */
+        width: 100%; /* Faz o logotipo ocupar 100% da largura do contêiner */
         height: auto;
     }
 }
