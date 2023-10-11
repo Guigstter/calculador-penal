@@ -184,6 +184,7 @@ img {
 @media only screen and (max-width: 600px) {
     #content-wrapper {
         width: 90%; /* Reduz a largura para melhorar em telas menores */
+        overflow-x: hidden; /* Impede a rolagem horizontal */
     }
 
     form {
@@ -200,6 +201,11 @@ img {
 
     .checkbox-container {
         width: 100%; /* Preenche a largura do contêiner pai */
+    }
+
+    #logo-container img {
+        max-width: 100%; /* Faz o logotipo ocupar 100% da largura do contêiner */
+        height: auto;
     }
 }
 
