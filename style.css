@@ -64,8 +64,7 @@ h1, h2 {
     }
 
     form {
-        width: 80%;
-        margin: auto; /* Centralizar o formulário */
+        width: 80%; /* Reduzindo a largura do formulário */
     }
 
     select, input {
