@@ -1,3 +1,5 @@
+
+
 body {
     text-align: center;
     margin: 0;
@@ -84,13 +86,7 @@ h1, h2 {
     }
 
     #relatorio-container {
-        text-align: center;
-        width: 100%;
-        box-sizing: border-box;
-        overflow: auto;
-        margin: 0;
-        padding: 10px;
-        max-width: 100%; /* Alteração aqui para garantir responsividade */
+        width: 90%;
     }
 }
 
@@ -317,3 +313,9 @@ input:checked + .slider:before {
     background-color: #FF0000; /* Cor vermelha de fundo */
     color: #000000; /* Texto em preto */
 }
+
+
+
+
+
+
