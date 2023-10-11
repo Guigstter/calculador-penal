@@ -1,5 +1,3 @@
-
-
 body {
     text-align: center;
     margin: 0;
@@ -34,64 +32,6 @@ h1, h2 {
     border-radius: 8px;
 }
 
-body {
-    text-align: center;
-    margin: 0;
-    padding: 0;
-}
-
-#content-wrapper {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-h1, h2 {
-    color: #333;
-}
-
-/* Ajuste para Dispositivos Pequenos - Geral */
-@media screen and (max-width: 768px) {
-    #logo-container {
-        width: 80%;
-    }
-
-    #logo-container img {
-        width: 100%;
-        border-radius: 8px;
-    }
-
-    form {
-        width: 80%; /* Reduzindo a largura do formulário */
-    }
-
-    select, input {
-        width: 100%;
-    }
-
-    #relatorio-container {
-        width: 90%;
-    }
-}
-
-/* Ajuste para Dispositivos Pequenos - Relatório */
-@media screen and (max-width: 480px) {
-    #logo-container {
-        width: 100%;
-    }
-
-    form {
-        width: 100%;
-    }
-
-    #relatorio-container {
-        width: 100%;
-    }
-}
-
-
 form {
     background-color: #fff;
     padding: 20px;
@@ -101,7 +41,6 @@ form {
     margin: auto;
     overflow: hidden;
 }
-
 
 label {
     display: block;
