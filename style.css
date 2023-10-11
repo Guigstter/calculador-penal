@@ -93,7 +93,9 @@ h1, h2 {
         margin: 0;
         padding: 10px;
         max-width: 100%; /* Alteração aqui para garantir responsividade */
+        position: relative; /* Adição para corrigir o problema de deslocamento para a direita */
     }
+    
 }
 
 
