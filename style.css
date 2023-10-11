@@ -183,28 +183,33 @@ img {
 /* Ajustes para telas menores */
 @media only screen and (max-width: 600px) {
     #content-wrapper {
-        width: 100%; /* Preenche a largura do contêiner pai */
-        overflow-x: hidden; /* Impede a rolagem horizontal */
+        width: 100%;
+        overflow-x: hidden;
     }
 
     form {
-        width: 100%; /* Preenche a largura do contêiner pai */
+        width: 100%;
     }
 
     #relatorio-container {
-        width: 100%; /* Preenche a largura do contêiner pai */
+        width: 100%;
     }
 
     .checkbox-columns {
-        flex-direction: column; /* Empilha os elementos em telas menores */
+        flex-direction: column;
     }
 
     .checkbox-container {
-        width: 100%; /* Preenche a largura do contêiner pai */
+        width: 100%;
+    }
+
+    #logo-container {
+        width: 80%; /* Ajuste a largura conforme necessário */
+        margin: 0 auto;
     }
 
     #logo-container img {
-        width: 100%; /* Faz o logotipo ocupar 100% da largura do contêiner */
+        width: 100%;
         height: auto;
     }
 }
