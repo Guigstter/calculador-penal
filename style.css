@@ -71,9 +71,7 @@ h1, h2 {
         width: 100%;
     }
 
-    #relatorio-container {
-        width: 90%;
-    }
+
 }
 
 /* Ajuste para Dispositivos Pequenos - Relatório */
@@ -86,9 +84,6 @@ h1, h2 {
         width: 100%;
     }
 
-    #relatorio-container {
-        width: 100%;
-    }
 }
 
 
