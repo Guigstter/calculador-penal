@@ -224,15 +224,13 @@ input:checked + .slider:before {
 }
 
 #relatorio-container {
-    text-align: center;
-    max-width: 800px;
-    width: 20%;
-    margin: auto;
+    max-width: 100%; /* Adicione esta linha para garantir que o relatório não ultrapasse a largura da tela */
+    width: 100%; /* Adicione esta linha para garantir que o relatório ocupe toda a largura disponível */
+    margin: 20px auto; /* Adicione esta linha para centralizar o relatório e adicionar um espaçamento na parte superior */
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background-color: #fff;
-    margin-top: 20px;
 }
 
 /* Cor de fundo mostarda para os artigos 12 ao 35 */
