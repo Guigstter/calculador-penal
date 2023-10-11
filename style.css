@@ -58,6 +58,7 @@ h1, h2 {
     #relatorio-container {
         width: 100%;
         box-sizing: border-box;
+        margin: 0; /* Removendo margens que podem causar deslocamento */
     }
 
 
