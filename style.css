@@ -174,32 +174,6 @@ input:checked + .slider:before {
     margin-top: 20px;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Ajustes para telas menores */
-#content-wrapper {
-    width: 90%; /* Reduz a largura para melhorar em telas menores */
-}
-
-form {
-    width: 100%; /* Preenche a largura do contêiner pai */
-}
-
-#relatorio-container {
-    width: 90%; /* Reduz a largura para melhorar em telas menores */
-}
-
-.checkbox-columns {
-    flex-direction: column; /* Empilha os elementos em telas menores */
-}
-
-.checkbox-container {
-    width: 100%; /* Preenche a largura do contêiner pai */
-}
-
 /* Cor de fundo mostarda para os artigos 12 ao 35 */
 #crime_numero option[value="12"],
 #crime_numero option[value="13"],
@@ -279,3 +253,9 @@ form {
     background-color: #FF0000; /* Cor vermelha de fundo */
     color: #000000; /* Texto em preto */
 }
+
+
+
+
+
+
