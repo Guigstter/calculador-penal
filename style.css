@@ -1,3 +1,5 @@
+
+
 body {
     text-align: center;
     margin: 0;
@@ -32,6 +34,24 @@ h1, h2 {
     border-radius: 8px;
 }
 
+body {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+#content-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1, h2 {
+    color: #333;
+}
+
 /* Ajuste para Dispositivos Pequenos - Geral */
 @media screen and (max-width: 768px) {
     #logo-container {
@@ -44,7 +64,7 @@ h1, h2 {
     }
 
     form {
-        width: 80%;
+        width: 80%; /* Reduzindo a largura do formulário */
     }
 
     select, input {
@@ -71,6 +91,7 @@ h1, h2 {
     }
 }
 
+
 form {
     background-color: #fff;
     padding: 20px;
@@ -80,6 +101,7 @@ form {
     margin: auto;
     overflow: hidden;
 }
+
 
 label {
     display: block;
@@ -203,15 +225,16 @@ input:checked + .slider:before {
 
 #relatorio-container {
     max-width: 100%;
-    width: calc(100% - 40px);
+    width: calc(100% - 40px); /* Leva em consideração o padding de 20px em ambos os lados */
     margin: 20px;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background-color: #fff;
-    overflow: auto;
-    text-align: left;
+    overflow: auto; /* Adiciona scroll horizontal se necessário */
+    text-align: left; /* Alinha o texto à esquerda para evitar que o texto justificado crie espaçamento irregular */
 }
+
 
 /* Cor de fundo mostarda para os artigos 12 ao 35 */
 #crime_numero option[value="12"],
