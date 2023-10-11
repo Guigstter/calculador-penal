@@ -181,34 +181,25 @@ img {
 }
 
 /* Ajustes para telas menores */
-#content-wrapper {
-    width: 90%; /* Reduz a largura para melhorar em telas menores */
-}
-
-form {
-    width: 100%; /* Preenche a largura do contêiner pai */
-}
-
-#relatorio-container {
-    width: 90%; /* Reduz a largura para melhorar em telas menores */
-}
-
-.checkbox-columns {
-    flex-direction: column; /* Empilha os elementos em telas menores */
-}
-
-.checkbox-container {
-    width: 100%; /* Preenche a largura do contêiner pai */
-}
-
-/* Media query para telas menores que 600 pixels (ajuste conforme necessário) */
 @media only screen and (max-width: 600px) {
     #content-wrapper {
-        width: 100%; /* Usar largura total em telas menores que 600px */
+        width: 90%; /* Reduz a largura para melhorar em telas menores */
+    }
+
+    form {
+        width: 100%; /* Preenche a largura do contêiner pai */
     }
 
     #relatorio-container {
-        width: 100%; /* Usar largura total em telas menores que 600px */
+        width: 90%; /* Reduz a largura para melhorar em telas menores */
+    }
+
+    .checkbox-columns {
+        flex-direction: column; /* Empilha os elementos em telas menores */
+    }
+
+    .checkbox-container {
+        width: 100%; /* Preenche a largura do contêiner pai */
     }
 }
 
