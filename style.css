@@ -52,11 +52,15 @@ h1, h2 {
     color: #333;
 }
 
-/* Ajustes para Dispositivos Pequenos */
+
+/* Ajuste para Dispositivos Pequenos - Relatório */
 @media screen and (max-width: 768px) {
-    form {
-        width: 90%;
+    #relatorio-container {
+        width: 100%;
+        box-sizing: border-box;
     }
+
+
 
     #logo-container {
         width: 80%;
