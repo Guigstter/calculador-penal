@@ -35,6 +35,7 @@
             <label for="crime_numero">Selecione o número do Art.:</label>
             <select id="crime_numero" required>
                 <!-- Opções de crimes - remova ou adicione conforme necessário -->
+                <option value="11">DAR FUGA SEM TER NADA DE ILEGAL - PENA MAXIMA</option>
                 <option value="12">Art.12 - USAR EQUIPAMENTO BALISTICO</option>
                 <option value="13">Art.13 - USAR EQUIPAMENTO POLICIAL</option>
                 <option value="14">Art.14 - USAR MASCARA DE OCULTAÇÃO DO ROSTO</option>
@@ -191,6 +192,7 @@
 
         function calcularMesesPrisao() {
             const mesesPorCrime = {
+                'Art.11': 60,
                 'Art.12': 5,
                 'Art.13': 5,
                 'Art.14': 5,
