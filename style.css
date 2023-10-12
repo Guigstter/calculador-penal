@@ -214,6 +214,11 @@ img {
     }
 }
 
+#crime_numero option[value="35"] {
+    background-color: #FF9900; /* Cor mostarda de fundo */
+    color: #000000; /* Texto em preto */
+}
+
 /* Cor de fundo mostarda para os artigos 12 ao 35 */
 #crime_numero option[value="12"],
 #crime_numero option[value="13"],
