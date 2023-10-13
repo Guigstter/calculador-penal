@@ -5,20 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora Penal</title>
-    <!-- Adicionando Favicon -->
-    <link rel="icon" type="image/png" href="/img/Policia_Federal-logo.png">
-
-    <!-- Adicionando o link para o arquivo CSS -->
+    <link rel="icon" type="image/png" href="img/Policia_Federal-logo.png">
     <link rel="stylesheet" type="text/css" href="style.css">
-
-    <!-- Meta tag para proteção contra CSRF -->
     <meta name="referrer" content="strict-origin-when-cross-origin">
 </head>
 
 <body>
     <div id="content-wrapper">
         <div id="logo-container">
-            <img src="https://processus.edu.br/concursos/wp-content/uploads/2020/09/pf-2.jpg" alt="Logotipo">
+            <img src="img/logo.jpg" alt="Logotipo">
         </div>
 
         <h1>Calculadora Penal</h1>
@@ -35,7 +30,7 @@
             <label for="crime_numero">Selecione o número do Art.:</label>
             <select id="crime_numero" required>
                 <!-- Opções de crimes - remova ou adicione conforme necessário -->
-                <option value="11">DAR FUGA SEM TER NADA DE ILEGAL - PENA MAXIMA</option>
+                <option value="11">DAR FUDA SEM TER FEITO NADA ILEGAL-PENA MÁXIMA</option>
                 <option value="12">Art.12 - USAR EQUIPAMENTO BALISTICO</option>
                 <option value="13">Art.13 - USAR EQUIPAMENTO POLICIAL</option>
                 <option value="14">Art.14 - USAR MASCARA DE OCULTAÇÃO DO ROSTO</option>
@@ -124,6 +119,13 @@
                         <input type="checkbox" id="reuPrimario">
                         <span class="slider"></span>
                     </label>
+
+                    <label for="chamouAdvogado">Chamou Advogado:</label>
+                    <label class="switch">
+                        <input type="checkbox" id="chamouAdvogado" class="botao-advogado">
+                        <span class="slider"></span>
+                    </label>
+
                 </div>
 
                 <div class="checkbox-container">
@@ -161,13 +163,12 @@
 
 <div id="relatorio-container-wrapper">
     <div id="relatorio-container">
-            <!-- Adicione este código onde deseja que o total de meses seja exibido -->
-            <span id="totalMesesVisor">Total de Meses: 0</span>
-            <h2>Relatório Penal</h2>
-            <pre id="relatorio"></pre>
-            <button id="btn-copiar" onclick="copiarRelatorio()">Copiar Relatório</button>
-        </div>
+        <span id="totalMesesVisor">Total de Meses: 0</span>
+        <h2>Relatório Penal</h2>
+        <pre id="relatorio"></pre>
+        <button id="btn-copiar" onclick="copiarRelatorio()">Copiar Relatório</button>
     </div>
+</div>
 
     </form>
 
@@ -176,23 +177,37 @@
 
         function adicionarCrime() {
             let crimeNumero = document.getElementById('crime_numero').value;
-            crimes.push("Art." + crimeNumero);
-            document.getElementById('crime_numero').value = '';
+
+            if (!crimeNumero || crimeNumero === 'Selecione o número do Art.:') {
+                alert('Por favor, selecione um crime antes de adicionar.');
+                return;
+            }
+
+            if (!crimes.includes("Art." + crimeNumero)) {
+                crimes.push("Art." + crimeNumero);
+                document.getElementById('crime_numero').value = '';
+                gerarRelatorio();
+            } else {
+                alert('Este crime já foi adicionado.');
+            }
         }
+
 
         function limparArtigos() {
             crimes = [];
+	    atualizarBotaoAdvogado();
+       	    gerarRelatorio();
         }
 
         function capitalizeFirstLetter(str) {
-            return str.replace(/\b\w/g, function(l) {
+            return str.replace(/\b\w/g, function (l) {
                 return l.toUpperCase();
             });
         }
 
         function calcularMesesPrisao() {
             const mesesPorCrime = {
-                'Art.11': 60,
+	        'Art.11': 60,
                 'Art.12': 5,
                 'Art.13': 5,
                 'Art.14': 5,
@@ -258,7 +273,6 @@
                 'Art.74': 60,
                 'Art.75': 60,
                 'Art.76': 60,
-                // Adicione mais crimes conforme necessário
             };
 
             const confessouCrime = document.getElementById('confessarCrime').checked;
@@ -267,80 +281,128 @@
             const reincidenteCrimeDiferente = document.getElementById('reuReincidenteCrimeDiferente').checked;
             const usarVeiculoPublico = document.getElementById('usarVeiculoPublico').checked;
             const desacato = document.getElementById('desacato').checked;
+            const chamouAdvogado = document.getElementById('chamouAdvogado').checked;
 
-            const totalMesesPrisao = crimes.reduce((total, crime) => {
+            const artigosImpedemAdvogado = ['Art.11', 'Art.15', 'Art.18', 'Art.19', 'Art.21', 'Art.24', 'Art.26', 'Art.27', 'Art.28', 'Art.30', 'Art.32', 'Art.48', 'Art.51', 'Art.56', 'Art.61', 'Art.62', 'Art.65', 'Art.67', 'Art.68', 'Art.69', 'Art.70', 'Art.71', 'Art.72', 'Art.73', 'Art.74', 'Art.75', 'Art.76'];
+            const impedidoChamarAdvogado = crimes.some(crime => artigosImpedemAdvogado.includes(crime));
+
+            let totalPorcentagens = 0;
+
+
+            if (confessouCrime) {
+                totalPorcentagens -= 0.1; // 10% de desconto
+            }
+
+            if (reuPrimario) {
+                totalPorcentagens -= 0.1; // 10% de desconto
+            }
+
+            totalPorcentagens += (reincidenteCrimeDiferente ? 0.2 : 0);
+            totalPorcentagens += (usarVeiculoPublico ? 0.5 : 0);
+            totalPorcentagens += (desacato ? 0.5 : 0);
+
+
+            if (reincidenteMesmoCrime) {
+                if (chamouAdvogado && !impedidoChamarAdvogado) {
+
+                    totalPorcentagens -= 0.3; // Redução de 30%
+                } else {
+
+                    totalPorcentagens += 0.3; // Acréscimo de 30%
+                }
+            }
+
+
+            if (chamouAdvogado && !impedidoChamarAdvogado && !reincidenteMesmoCrime) {
+                totalPorcentagens -= 0.5; // Redução de 50%
+            }
+
+
+            let totalMesesPrisao = crimes.reduce((total, crime) => {
                 if (mesesPorCrime.hasOwnProperty(crime)) {
                     total += mesesPorCrime[crime];
                 }
                 return total;
             }, 0);
 
-            let descontoPrimario = 0;
+            totalMesesPrisao = Math.max(0, totalMesesPrisao * (1 + totalPorcentagens));
 
-            if (reuPrimario) {
-                descontoPrimario += 0.1; // Acréscimo de 10% para réu primário
-            }
-
-            // Calcular descontos e aumentos
-            const fatorDesconto = 1 - descontoPrimario;
-            const fatorAumento = 1 +
-                (reincidenteMesmoCrime ? 0.3 : 0) +  // Aumento de 30% para reincidente pelo mesmo crime
-                (reincidenteCrimeDiferente ? 0.2 : 0) +  // Aumento de 20% para reincidente por crime diferente
-                (usarVeiculoPublico ? 0.5 : 0) +  // Aumento de 50% para usar veículo público para crime
-                (desacato ? 0.5 : 0);  // Aumento de 50% para desacato
-                // Adicione outros aumentos/descontos conforme necessário
-
-            const totalComDesconto = Math.max(0, totalMesesPrisao * fatorDesconto * fatorAumento);
-
-            if (confessouCrime) {
-                const descontoConfissao = totalComDesconto * 0.1;
-                return Math.max(0, totalComDesconto - descontoConfissao);
-            }
-
-            return totalComDesconto;
+            return totalMesesPrisao;
         }
 
-        function gerarRelatorio() {
-            let numero_oficial = document.getElementById('numero_oficial').value;
-            let nome_oficial = capitalizeFirstLetter(document.getElementById('nome_oficial').value);
-            let numero_passaporte = document.getElementById('numero_passaporte').value;
-            
-            let totalMesesPrisao = calcularMesesPrisao();
+        function atualizarBotaoAdvogado() {
+            const chamouAdvogado = document.getElementById('chamouAdvogado');
+            const artigosImpedemAdvogado = ['Art.11', 'Art.15', 'Art.18', 'Art.19', 'Art.21', 'Art.24', 'Art.26', 'Art.27', 'Art.28', 'Art.30', 'Art.32', 'Art.48', 'Art.51', 'Art.56', 'Art.61', 'Art.62', 'Art.65', 'Art.67', 'Art.68', 'Art.69', 'Art.70', 'Art.71', 'Art.72', 'Art.73', 'Art.74', 'Art.75', 'Art.76'];
 
-            // Arredondar para baixo
-            totalMesesPrisao = Math.floor(totalMesesPrisao);
+            const algumArtigoImpedeAdvogado = crimes.some(crime => artigosImpedemAdvogado.includes(crime));
 
-            document.getElementById('totalMesesVisor').textContent = "Total de Meses: " + Math.floor(totalMesesPrisao);
+            if (algumArtigoImpedeAdvogado) {
 
-            let data_hora_atual = new Date();
-            let data_hora_formatada = data_hora_atual.toLocaleString();
-            let totalMesesPrisaoExibicao = Math.min(totalMesesPrisao, 60);
+                chamouAdvogado.disabled = true;
+
+            } else {
+
+                chamouAdvogado.disabled = false;
+
+            }
+        }
+
+
+        atualizarBotaoAdvogado();
+
+
+	function gerarRelatorio() {
+    	    let numero_oficial = document.getElementById('numero_oficial').value;
+    	    let nome_oficial = capitalizeFirstLetter(document.getElementById('nome_oficial').value);
+    	    let numero_passaporte = document.getElementById('numero_passaporte').value;
+
+    	    let totalMesesPrisao = calcularMesesPrisao();
+
+
+    	    totalMesesPrisao = Math.floor(totalMesesPrisao);
+
+    	    document.getElementById('totalMesesVisor').textContent = "Total de Meses: " + Math.floor(totalMesesPrisao);
+
+    	    let data_hora_atual = new Date();
+    	    let data_hora_formatada = data_hora_atual.toLocaleString();
+    	    let totalMesesPrisaoExibicao = Math.min(totalMesesPrisao, 60);
+
+
+    	    const crimesFormatados = crimes.map(crime => {
+        	if (crime === "Art.11") {
+            	    return "DAR FUDA SEM TER FEITO NADA ILEGAL - PENA MÁXIMA";
+        	} else {
+                    return crime;
+        	}
+            });
 
             let relatorio = "[OFICIAL]: " + numero_oficial + " | " + nome_oficial + "\n";
-            relatorio += "[==============PRENDEU==============]\n";
-            relatorio += "[PASSAPORTE]: " + numero_passaporte + "\n";
-            relatorio += "[TEMPO]: " + totalMesesPrisaoExibicao.toFixed(0) + " meses\n";
-            relatorio += "[CRIMES]: " + crimes.join(', ') + "\n";
-            relatorio += "[Data]: " + data_hora_formatada + "\n";
-            relatorio += "Participantes:\n";
+    	    relatorio += "[==============PRENDEU==============]\n";
+    	    relatorio += "[PASSAPORTE]: " + numero_passaporte + "\n";
+    	    relatorio += "[TEMPO]: " + totalMesesPrisaoExibicao.toFixed(0) + " meses\n";
+    	    relatorio += "[CRIMES]: " + crimesFormatados.join(', ') + "\n";
+    	    relatorio += "[Data]: " + data_hora_formatada + "\n";
+    	    relatorio += "Participantes:\n";
 
-            document.getElementById('relatorio').textContent = relatorio;
-        }
+    	    document.getElementById('relatorio').textContent = relatorio;
+    	    atualizarBotaoAdvogado();
+	}
+
 
 
         function copiarRelatorio() {
             const relatorioText = document.getElementById('relatorio').textContent;
 
-            // Criar um elemento de texto oculto para copiar o texto
+
             const textarea = document.createElement('textarea');
             textarea.value = relatorioText;
             document.body.appendChild(textarea);
 
-            // Selecionar e copiar o texto
+
             textarea.select();
             document.execCommand('copy');
 
-            // Remover o elemento de texto
+
             document.body.removeChild(textarea);
 
             alert('Relatório copiado para a área de transferência!');

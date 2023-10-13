@@ -174,13 +174,19 @@ input:checked + .slider:before {
     margin-top: 20px;
 }
 
-/* Estilo para tornar as imagens responsivas */
+
+.botao-advogado:disabled + .slider {
+    background-color: red;
+}
+
+
+
 img {
     max-width: 100%;
     height: auto;
 }
 
-/* Ajustes para telas menores */
+
 @media only screen and (max-width: 600px) {
     #content-wrapper {
         width: 100%;
@@ -204,7 +210,7 @@ img {
     }
 
     #logo-container {
-        width: 80%; /* Ajuste a largura conforme necessário */
+        width: 80%; 
         margin: 0 auto;
     }
 
@@ -215,11 +221,11 @@ img {
 }
 
 #crime_numero option[value="11"] {
-    background-color: #FF0000; /* Cor mostarda de fundo */
-    color: #000000; /* Texto em preto */
+    background-color: #FF0000; 
+    color: #000000; 
 }
 
-/* Cor de fundo mostarda para os artigos 12 ao 35 */
+
 #crime_numero option[value="12"],
 #crime_numero option[value="13"],
 #crime_numero option[value="14"],
@@ -244,11 +250,11 @@ img {
 #crime_numero option[value="33"],
 #crime_numero option[value="34"],
 #crime_numero option[value="35"] {
-    background-color: #DAA520; /* Cor mostarda de fundo */
-    color: #000000; /* Texto em preto */
+    background-color: #DAA520; 
+    color: #000000; 
 }
 
-/* Cor de fundo roxo para os artigos 36 ao 69 */
+
 #crime_numero option[value="36"],
 #crime_numero option[value="37"],
 #crime_numero option[value="38"],
@@ -283,11 +289,11 @@ img {
 #crime_numero option[value="67"],
 #crime_numero option[value="68"],
 #crime_numero option[value="69"] {
-    background-color: #800080; /* Cor roxa de fundo */
-    color: #000000; /* Texto em preto */
+    background-color: #800080; 
+    color: #000000; 
 }
 
-/* Cor de fundo vermelho para os artigos 70 ao 76 */
+
 #crime_numero option[value="70"],
 #crime_numero option[value="71"],
 #crime_numero option[value="72"],
@@ -295,6 +301,6 @@ img {
 #crime_numero option[value="74"],
 #crime_numero option[value="75"],
 #crime_numero option[value="76"] {
-    background-color: #FF0000; /* Cor vermelha de fundo */
-    color: #000000; /* Texto em preto */
+    background-color: #FF0000; 
+    color: #000000; 
 }
